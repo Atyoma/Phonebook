@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/455.3580363a.chunk.css","mappings":"AAAA,uBAEE,YAAa,CADb,iBAEF,CAEA,gCACE,YACF","sources":["components/WelcomeMessage/Message.module.css"],"sourcesContent":[".title {\n  text-align: center;\n  padding: 30px;\n}\n\n.notFoundPageBox {\n  padding: 30px;\n}\n"],"names":[],"sourceRoot":""}
