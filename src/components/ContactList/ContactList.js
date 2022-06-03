@@ -19,7 +19,7 @@ function ContactList() {
     );
   };
   const filteredContacts = getFilteredContacts();
-  console.log(contacts);
+
   return (
     <>
       {isFetching && <Loader />}

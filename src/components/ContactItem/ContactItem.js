@@ -9,7 +9,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 function ContactItem({ contact }) {
   const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();
 
-  console.log(contact);
   return (
     <div className={s.item}>
       <p className={s.contact}>
