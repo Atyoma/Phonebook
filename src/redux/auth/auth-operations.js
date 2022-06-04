@@ -2,6 +2,7 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 const token = {
@@ -13,20 +14,23 @@ const token = {
   },
 };
 
-const register = createAsyncThunk('auth/register', async credentials => {
+export const register = createAsyncThunk('auth/register', async credentials => {
   try {
     const { data } = await axios.post('/users/signup', credentials);
+    toast.success(`Registration completed successfully!`);
     token.set(data.token);
-    toast.success(`Welcome!`);
     return data;
-  } catch (error) {}
+  } catch (error) {
+    toast.error(`${error.message}`);
+    return error.response.status;
+  }
 });
 
 export const logIn = createAsyncThunk('auth/login', async credentials => {
   try {
     const { data } = await axios.post('/users/login', credentials);
     token.set(data.token);
-    toast.success(`Login!`);
+    toast.success(`Welcome, create your phone book!`);
     return data;
   } catch (error) {
     toast.error(`Email or password not correct!`);
